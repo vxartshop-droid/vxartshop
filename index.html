@@ -10,6 +10,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 *{
@@ -47,10 +48,23 @@ border-radius:999px;
 z-index:-1;
 }
 
+.grid-bg{
+background-image:
+linear-gradient(rgba(255,122,0,.06) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,122,0,.06) 1px, transparent 1px);
+background-size:42px 42px;
+}
+
 .card{
 background:#fff;
 border:1px solid rgba(0,0,0,.06);
 box-shadow:0 12px 35px rgba(0,0,0,.08);
+}
+
+.glass{
+background:rgba(255,255,255,.75);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.7);
 }
 
 .logo-box{
@@ -74,12 +88,51 @@ font-size:46px;
 border-radius:30px;
 }
 
-.service-card{
-transition:.25s ease;
+.service-card,.project-card,.price-card{
+transition:.35s cubic-bezier(.175,.885,.32,1.275);
 }
 
-.service-card:hover{
-transform:translateY(-5px);
+.service-card:hover,.project-card:hover,.price-card:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 25px 60px rgba(255,90,0,.16);
+}
+
+.float{
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-14px)}
+}
+
+.reveal{
+opacity:0;
+transform:translateY(35px);
+animation:reveal .8s ease forwards;
+}
+
+@keyframes reveal{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.whatsapp-float{
+position:fixed;
+right:22px;
+bottom:22px;
+width:62px;
+height:62px;
+border-radius:999px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:28px;
+z-index:999;
+box-shadow:0 20px 45px rgba(255,90,0,.45);
 }
 
 @media(max-width:640px){
@@ -106,11 +159,23 @@ line-height:1.05;
 font-size:36px;
 line-height:1.1;
 }
+
+.whatsapp-float{
+width:56px;
+height:56px;
+font-size:25px;
+right:16px;
+bottom:16px;
+}
 }
 </style>
 </head>
 
 <body>
+
+<a href="https://wa.me/5598985996937?text=Olá,%20vim%20pelo%20site%20da%20VXART" class="whatsapp-float orange">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
 
 <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-xl border-b border-black/5 z-50">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-4">
@@ -124,6 +189,13 @@ line-height:1.1;
 </div>
 </div>
 
+<div class="hidden md:flex items-center gap-6 text-sm font-bold text-gray-600">
+<a href="#servicos" class="hover:text-orange-600">Serviços</a>
+<a href="#projetos" class="hover:text-orange-600">Projetos</a>
+<a href="#planos" class="hover:text-orange-600">Planos</a>
+<a href="#faq" class="hover:text-orange-600">FAQ</a>
+</div>
+
 <a href="https://wa.me/5598985996937?text=Olá,%20vim%20pelo%20site%20da%20VXART"
 class="orange text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl font-bold shadow-lg text-sm sm:text-base">
 WhatsApp
@@ -134,14 +206,15 @@ WhatsApp
 
 <main>
 
-<section class="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16">
+<section class="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16 grid-bg">
 <div class="blur-light top-[-160px] right-[-120px]"></div>
 <div class="blur-light bottom-[-180px] left-[-180px] opacity-10"></div>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-<div class="text-center lg:text-left">
+<div class="text-center lg:text-left reveal">
 <div class="inline-flex bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-xs sm:text-sm font-bold mb-6">
+<i class="fa-solid fa-bolt"></i>
 Soluções Digitais Premium
 </div>
 
@@ -175,8 +248,8 @@ Nossos Serviços
 </div>
 </div>
 
-<div>
-<div class="card rounded-[30px] sm:rounded-[40px] p-6 sm:p-10 max-w-md mx-auto lg:max-w-none">
+<div class="reveal">
+<div class="card glass rounded-[30px] sm:rounded-[40px] p-6 sm:p-10 max-w-md mx-auto lg:max-w-none float">
 
 <div class="flex justify-center">
 <div class="logo-box big-logo">VX</div>
@@ -219,6 +292,32 @@ CRIAR • CONECTAR • EVOLUIR
 </div>
 </section>
 
+<section class="py-14 bg-black text-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+
+<div>
+<h3 class="text-3xl sm:text-4xl font-black orange-text">100%</h3>
+<p class="text-gray-400 mt-2">Responsivo</p>
+</div>
+
+<div>
+<h3 class="text-3xl sm:text-4xl font-black orange-text">24h</h3>
+<p class="text-gray-400 mt-2">Atendimento</p>
+</div>
+
+<div>
+<h3 class="text-3xl sm:text-4xl font-black orange-text">4+</h3>
+<p class="text-gray-400 mt-2">Soluções</p>
+</div>
+
+<div>
+<h3 class="text-3xl sm:text-4xl font-black orange-text">VX</h3>
+<p class="text-gray-400 mt-2">Padrão Premium</p>
+</div>
+
+</div>
+</section>
+
 <section id="servicos" class="py-16 sm:py-24 bg-white">
 <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
@@ -235,27 +334,138 @@ Design moderno, páginas profissionais e soluções digitais para destacar sua m
 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12 sm:mt-16">
 
 <div class="service-card card rounded-3xl p-6 sm:p-8">
-<div class="w-14 h-14 sm:w-16 sm:h-16 orange rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl">🔗</div>
+<div class="w-14 h-14 sm:w-16 sm:h-16 orange rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl">
+<i class="fa-solid fa-link"></i>
+</div>
 <h3 class="text-xl sm:text-2xl font-black mt-5 sm:mt-6">Bio Links</h3>
 <p class="text-gray-600 mt-3 sm:mt-4 leading-relaxed">Páginas premium para Instagram, WhatsApp e divulgação profissional.</p>
 </div>
 
 <div class="service-card card rounded-3xl p-6 sm:p-8">
-<div class="w-14 h-14 sm:w-16 sm:h-16 orange rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl">🚀</div>
+<div class="w-14 h-14 sm:w-16 sm:h-16 orange rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl">
+<i class="fa-solid fa-rocket"></i>
+</div>
 <h3 class="text-xl sm:text-2xl font-black mt-5 sm:mt-6">Landing Pages</h3>
 <p class="text-gray-600 mt-3 sm:mt-4 leading-relaxed">Páginas para vendas, anúncios e captação de clientes.</p>
 </div>
 
 <div class="service-card card rounded-3xl p-6 sm:p-8">
-<div class="w-14 h-14 sm:w-16 sm:h-16 orange rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl">💻</div>
+<div class="w-14 h-14 sm:w-16 sm:h-16 orange rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl">
+<i class="fa-solid fa-laptop-code"></i>
+</div>
 <h3 class="text-xl sm:text-2xl font-black mt-5 sm:mt-6">Mini Sites</h3>
 <p class="text-gray-600 mt-3 sm:mt-4 leading-relaxed">Sites rápidos, modernos e profissionais para negócios.</p>
 </div>
 
 <div class="service-card card rounded-3xl p-6 sm:p-8">
-<div class="w-14 h-14 sm:w-16 sm:h-16 orange rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl">🎨</div>
+<div class="w-14 h-14 sm:w-16 sm:h-16 orange rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl">
+<i class="fa-solid fa-pen-nib"></i>
+</div>
 <h3 class="text-xl sm:text-2xl font-black mt-5 sm:mt-6">Design</h3>
 <p class="text-gray-600 mt-3 sm:mt-4 leading-relaxed">Capas, banners, identidade visual e artes premium.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="projetos" class="py-16 sm:py-24 bg-gray-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="mobile-section-title text-4xl sm:text-5xl font-black">
+Modelos de <span class="orange-text">Projetos</span>
+</h2>
+<p class="mt-5 text-gray-600 text-base sm:text-lg">
+Algumas soluções que podemos criar para sua marca aparecer melhor na internet.
+</p>
+</div>
+
+<div class="grid md:grid-cols-3 gap-6 sm:gap-8 mt-12">
+
+<div class="project-card card rounded-3xl overflow-hidden">
+<div class="h-48 orange flex items-center justify-center text-white text-6xl">
+<i class="fa-solid fa-mobile-screen-button"></i>
+</div>
+<div class="p-7">
+<h3 class="text-2xl font-black">Bio Link Premium</h3>
+<p class="text-gray-600 mt-3">Página bonita com botões, contatos, redes, serviços e chamada para WhatsApp.</p>
+</div>
+</div>
+
+<div class="project-card card rounded-3xl overflow-hidden">
+<div class="h-48 bg-black flex items-center justify-center text-orange-500 text-6xl">
+<i class="fa-solid fa-store"></i>
+</div>
+<div class="p-7">
+<h3 class="text-2xl font-black">Site Comercial</h3>
+<p class="text-gray-600 mt-3">Site para empresa, loja, provedor, salão, assistência, profissional autônomo e serviços.</p>
+</div>
+</div>
+
+<div class="project-card card rounded-3xl overflow-hidden">
+<div class="h-48 orange flex items-center justify-center text-white text-6xl">
+<i class="fa-solid fa-bullhorn"></i>
+</div>
+<div class="p-7">
+<h3 class="text-2xl font-black">Página de Vendas</h3>
+<p class="text-gray-600 mt-3">Landing page focada em divulgação, anúncio, captação de clientes e conversão.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="planos" class="py-16 sm:py-24 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="mobile-section-title text-4xl sm:text-5xl font-black">
+Planos <span class="orange-text">Iniciais</span>
+</h2>
+<p class="mt-5 text-gray-600 text-base sm:text-lg">
+Valores podem variar conforme o projeto, mas essa base ajuda o cliente a entender.
+</p>
+</div>
+
+<div class="grid md:grid-cols-3 gap-6 sm:gap-8 mt-12">
+
+<div class="price-card card rounded-3xl p-8">
+<h3 class="text-2xl font-black">Start</h3>
+<p class="text-gray-600 mt-3">Para presença simples e rápida.</p>
+<p class="text-4xl font-black mt-6 orange-text">Bio Link</p>
+<ul class="mt-6 space-y-3 text-gray-600">
+<li>✓ Layout premium</li>
+<li>✓ Botão WhatsApp</li>
+<li>✓ Links principais</li>
+<li>✓ Visual responsivo</li>
+</ul>
+</div>
+
+<div class="price-card card rounded-3xl p-8 border-2 border-orange-500">
+<div class="inline-flex orange text-white px-4 py-2 rounded-full text-sm font-bold mb-4">Mais pedido</div>
+<h3 class="text-2xl font-black">Pro</h3>
+<p class="text-gray-600 mt-3">Para negócio que quer vender mais.</p>
+<p class="text-4xl font-black mt-6 orange-text">Landing Page</p>
+<ul class="mt-6 space-y-3 text-gray-600">
+<li>✓ Página de vendas</li>
+<li>✓ Seções profissionais</li>
+<li>✓ Chamada para ação</li>
+<li>✓ Otimizado para celular</li>
+</ul>
+</div>
+
+<div class="price-card card rounded-3xl p-8">
+<h3 class="text-2xl font-black">Business</h3>
+<p class="text-gray-600 mt-3">Para marca mais completa.</p>
+<p class="text-4xl font-black mt-6 orange-text">Mini Site</p>
+<ul class="mt-6 space-y-3 text-gray-600">
+<li>✓ Página institucional</li>
+<li>✓ Serviços</li>
+<li>✓ Contato</li>
+<li>✓ Design premium</li>
+</ul>
 </div>
 
 </div>
@@ -278,6 +488,41 @@ A VXART cria soluções digitais modernas com visual premium para ajudar negóci
 class="inline-flex mt-8 sm:mt-10 orange text-white px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-black text-base sm:text-lg shadow-2xl">
 Solicitar Orçamento
 </a>
+</div>
+</section>
+
+<section id="faq" class="py-16 sm:py-24 bg-white">
+<div class="max-w-4xl mx-auto px-4 sm:px-6">
+
+<div class="text-center">
+<h2 class="mobile-section-title text-4xl sm:text-5xl font-black">
+Dúvidas <span class="orange-text">Frequentes</span>
+</h2>
+</div>
+
+<div class="mt-12 space-y-5">
+
+<div class="card rounded-3xl p-6">
+<h3 class="font-black text-xl">A VXART faz site pelo celular e computador?</h3>
+<p class="text-gray-600 mt-3">Sim. As páginas são feitas para abrir bem em celular, tablet e computador.</p>
+</div>
+
+<div class="card rounded-3xl p-6">
+<h3 class="font-black text-xl">Posso colocar WhatsApp no site?</h3>
+<p class="text-gray-600 mt-3">Sim. O foco é justamente facilitar o cliente chamar você no WhatsApp.</p>
+</div>
+
+<div class="card rounded-3xl p-6">
+<h3 class="font-black text-xl">A VXART também faz artes e capas?</h3>
+<p class="text-gray-600 mt-3">Sim. Fazemos capas, banners, identidade visual e materiais para divulgação.</p>
+</div>
+
+<div class="card rounded-3xl p-6">
+<h3 class="font-black text-xl">Como peço orçamento?</h3>
+<p class="text-gray-600 mt-3">É só chamar no WhatsApp e explicar se você quer bio link, landing page, mini site ou design.</p>
+</div>
+
+</div>
 </div>
 </section>
 
