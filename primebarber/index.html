@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Prime Barber | Barbearia Premium</title>
+<meta name="description" content="Modelo premium de site para barbearia criado pela VXART.">
 
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 *{
@@ -15,6 +17,7 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
@@ -23,134 +26,436 @@ color:#fff;
 overflow-x:hidden;
 }
 
+:root{
+--orange:#ff4d00;
+--orange2:#ff7a00;
+}
+
 .orange{
-background:linear-gradient(135deg,#ff7a00,#ff4d00);
+background:linear-gradient(135deg,var(--orange2),var(--orange));
 }
 
 .orange-text{
-background:linear-gradient(135deg,#ff7a00,#ff4d00);
+background:linear-gradient(135deg,var(--orange2),var(--orange));
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+}
+
+.card{
+background:linear-gradient(180deg,#111,#070707);
+border:1px solid rgba(255,122,0,.22);
+box-shadow:0 25px 70px rgba(0,0,0,.5);
+}
+
+.glow{
+box-shadow:0 0 35px rgba(255,90,0,.35);
+}
+
+.bg-grid{
+background-image:
+linear-gradient(rgba(255,122,0,.06) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,122,0,.06) 1px, transparent 1px);
+background-size:42px 42px;
+}
+
+.blur-orange{
+position:absolute;
+width:420px;
+height:420px;
+border-radius:999px;
+background:linear-gradient(135deg,var(--orange2),var(--orange));
+filter:blur(130px);
+opacity:.16;
+z-index:0;
 }
 
 .hero{
 min-height:100vh;
 display:flex;
 align-items:center;
-justify-content:center;
-padding:120px 20px;
+padding:120px 20px 70px;
 background:
-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85)),
-url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1600&auto=format&fit=crop') center/cover;
-}
-
-.card{
-background:#0f0f0f;
-border:1px solid rgba(255,255,255,.08);
+linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.9)),
+url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1800&auto=format&fit=crop') center/cover;
+position:relative;
+overflow:hidden;
 }
 
 .btn{
-padding:16px 32px;
+padding:16px 30px;
 border-radius:18px;
-font-weight:800;
+font-weight:900;
 display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+}
+
+.service-card,.price-card{
+transition:.35s cubic-bezier(.175,.885,.32,1.275);
+}
+
+.service-card:hover,.price-card:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 25px 70px rgba(255,90,0,.18);
+}
+
+.section-title{
+font-size:clamp(2.2rem,5vw,4.5rem);
+line-height:1.04;
+font-weight:900;
+}
+
+.hero-title{
+font-size:clamp(3rem,7vw,6.2rem);
+line-height:.95;
+font-weight:900;
+letter-spacing:-.05em;
+}
+
+.mobile-menu{
+display:none;
+}
+
+.mobile-menu.active{
+display:block;
+}
+
+.whatsapp-float{
+position:fixed;
+right:20px;
+bottom:20px;
+width:62px;
+height:62px;
+border-radius:999px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:29px;
+z-index:999;
+color:white;
+box-shadow:0 20px 50px rgba(255,90,0,.45);
+}
+
+@media(max-width:768px){
+.whatsapp-float{
+width:56px;
+height:56px;
+font-size:25px;
+}
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero">
+<a href="https://wa.me/5598985996937?text=Olá,%20quero%20um%20site%20igual%20ao%20modelo%20Prime%20Barber" class="whatsapp-float orange">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
 
-<div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+<header class="fixed top-0 left-0 w-full z-50 bg-black/85 backdrop-blur-xl border-b border-orange-500/20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
 
 <div>
+<h1 class="text-2xl font-black">Prime<span class="orange-text">Barber</span></h1>
+<p class="text-xs text-gray-400">Barbearia Premium</p>
+</div>
 
-<p class="orange-text font-black tracking-[4px] mb-6">
+<nav class="hidden md:flex items-center gap-7 text-sm font-bold text-gray-300">
+<a href="#servicos" class="hover:text-orange-500">Serviços</a>
+<a href="#precos" class="hover:text-orange-500">Preços</a>
+<a href="#sobre" class="hover:text-orange-500">Sobre</a>
+<a href="#contato" class="hover:text-orange-500">Contato</a>
+</nav>
+
+<a href="https://wa.me/5598985996937?text=Olá,%20quero%20agendar%20um%20horário" class="hidden sm:inline-flex orange px-5 py-3 rounded-2xl font-black glow">
+Agendar
+</a>
+
+<button onclick="toggleMenu()" class="md:hidden w-12 h-12 rounded-2xl bg-white/10 border border-white/10">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+</div>
+
+<div id="mobileMenu" class="mobile-menu md:hidden bg-black border-t border-orange-500/20 px-4 pb-5">
+<div class="grid gap-4 pt-5 font-bold text-gray-300">
+<a onclick="toggleMenu()" href="#servicos">Serviços</a>
+<a onclick="toggleMenu()" href="#precos">Preços</a>
+<a onclick="toggleMenu()" href="#sobre">Sobre</a>
+<a onclick="toggleMenu()" href="#contato">Contato</a>
+<a onclick="toggleMenu()" href="https://wa.me/5598985996937?text=Olá,%20quero%20agendar%20um%20horário" class="orange text-white px-5 py-3 rounded-2xl text-center">
+Agendar no WhatsApp
+</a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="blur-orange top-[-180px] right-[-160px]"></div>
+
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center relative z-10">
+
+<div class="text-center lg:text-left">
+
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 font-black text-sm mb-6">
+<i class="fa-solid fa-crown"></i>
 BARBEARIA PREMIUM
+</div>
+
+<h2 class="hero-title">
+Seu visual merece nível
+<span class="orange-text">Prime.</span>
+</h2>
+
+<p class="mt-8 text-gray-300 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+Cortes modernos, barba premium, acabamento profissional e uma experiência feita para homens que valorizam presença.
 </p>
 
-<h1 class="text-5xl lg:text-7xl font-black leading-none">
-Seu visual
-merece nível
-<span class="orange-text">
-Prime.
-</span>
-</h1>
-
-<p class="mt-8 text-gray-300 text-lg leading-relaxed max-w-xl">
-Cortes modernos, barba premium e atendimento profissional para homens que valorizam presença.
-</p>
-
-<div class="mt-10 flex flex-wrap gap-4">
-
-<a href="#" class="btn orange">
+<div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<a href="https://wa.me/5598985996937?text=Olá,%20quero%20agendar%20um%20horário" class="btn orange glow">
+<i class="fa-brands fa-whatsapp"></i>
 Agendar Agora
 </a>
 
-<a href="#" class="btn bg-white text-black">
-Instagram
+<a href="#servicos" class="btn bg-white text-black">
+Ver Serviços
 </a>
+</div>
 
+<div class="mt-8 flex flex-wrap justify-center lg:justify-start gap-3 text-sm text-gray-300 font-bold">
+<span>✓ Corte premium</span>
+<span>✓ Barba alinhada</span>
+<span>✓ Atendimento agendado</span>
+<span>✓ Ambiente moderno</span>
 </div>
 
 </div>
 
-<div class="card rounded-[40px] p-10">
-
-<h2 class="text-4xl font-black">
-Prime Barber
-</h2>
-
-<p class="text-gray-400 mt-3">
-Barbearia moderna • Cortes premium
-</p>
+<div class="card rounded-[42px] p-7 sm:p-10">
+<h3 class="text-4xl font-black">Prime Barber</h3>
+<p class="text-gray-400 mt-3">Estilo, presença e acabamento.</p>
 
 <div class="grid grid-cols-2 gap-5 mt-10">
-
-<div class="bg-black rounded-3xl p-6">
-<p class="orange-text text-3xl font-black">
-01
-</p>
-<p class="mt-2 font-bold">
-Corte
-</p>
+<div class="bg-black rounded-3xl p-6 border border-white/10">
+<p class="orange-text text-3xl font-black">01</p>
+<p class="mt-2 font-bold">Corte</p>
 </div>
 
-<div class="bg-black rounded-3xl p-6">
-<p class="orange-text text-3xl font-black">
-02
-</p>
-<p class="mt-2 font-bold">
-Barba
-</p>
+<div class="bg-black rounded-3xl p-6 border border-white/10">
+<p class="orange-text text-3xl font-black">02</p>
+<p class="mt-2 font-bold">Barba</p>
 </div>
 
-<div class="bg-black rounded-3xl p-6">
-<p class="orange-text text-3xl font-black">
-03
-</p>
-<p class="mt-2 font-bold">
-Pigmentação
-</p>
+<div class="bg-black rounded-3xl p-6 border border-white/10">
+<p class="orange-text text-3xl font-black">03</p>
+<p class="mt-2 font-bold">Pigmentação</p>
 </div>
 
-<div class="bg-black rounded-3xl p-6">
-<p class="orange-text text-3xl font-black">
-04
-</p>
-<p class="mt-2 font-bold">
-Acabamento
-</p>
+<div class="bg-black rounded-3xl p-6 border border-white/10">
+<p class="orange-text text-3xl font-black">04</p>
+<p class="mt-2 font-bold">Acabamento</p>
+</div>
+</div>
 </div>
 
 </div>
-
-</div>
-
-</div>
-
 </section>
 
+<section class="py-12 bg-[#080808] border-y border-orange-500/20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+<div>
+<h3 class="text-3xl sm:text-4xl font-black orange-text">+500</h3>
+<p class="text-gray-400 mt-2">Cortes realizados</p>
+</div>
+<div>
+<h3 class="text-3xl sm:text-4xl font-black orange-text">5★</h3>
+<p class="text-gray-400 mt-2">Experiência premium</p>
+</div>
+<div>
+<h3 class="text-3xl sm:text-4xl font-black orange-text">100%</h3>
+<p class="text-gray-400 mt-2">Agendamento rápido</p>
+</div>
+<div>
+<h3 class="text-3xl sm:text-4xl font-black orange-text">Prime</h3>
+<p class="text-gray-400 mt-2">Padrão masculino</p>
+</div>
+</div>
+</section>
+
+<section id="servicos" class="py-20 sm:py-28 bg-[#070707] bg-grid">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="section-title">Serviços <span class="orange-text">Premium</span></h2>
+<p class="mt-5 text-gray-300 text-lg">
+Tudo que você precisa para sair com visual alinhado e presença forte.
+</p>
+</div>
+
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7 mt-14">
+
+<div class="service-card card rounded-3xl p-7">
+<div class="w-16 h-16 orange rounded-2xl flex items-center justify-center text-3xl">
+<i class="fa-solid fa-scissors"></i>
+</div>
+<h3 class="text-2xl font-black mt-6">Corte Masculino</h3>
+<p class="text-gray-400 mt-4">Corte moderno com acabamento alinhado e personalizado.</p>
+</div>
+
+<div class="service-card card rounded-3xl p-7">
+<div class="w-16 h-16 orange rounded-2xl flex items-center justify-center text-3xl">
+<i class="fa-solid fa-user-tie"></i>
+</div>
+<h3 class="text-2xl font-black mt-6">Barba Premium</h3>
+<p class="text-gray-400 mt-4">Modelagem, toalha quente e finalização profissional.</p>
+</div>
+
+<div class="service-card card rounded-3xl p-7">
+<div class="w-16 h-16 orange rounded-2xl flex items-center justify-center text-3xl">
+<i class="fa-solid fa-brush"></i>
+</div>
+<h3 class="text-2xl font-black mt-6">Pigmentação</h3>
+<p class="text-gray-400 mt-4">Realce discreto para barba e cabelo com acabamento natural.</p>
+</div>
+
+<div class="service-card card rounded-3xl p-7">
+<div class="w-16 h-16 orange rounded-2xl flex items-center justify-center text-3xl">
+<i class="fa-solid fa-spray-can-sparkles"></i>
+</div>
+<h3 class="text-2xl font-black mt-6">Finalização</h3>
+<p class="text-gray-400 mt-4">Pomada, alinhamento, perfume e acabamento no padrão Prime.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="precos" class="py-20 sm:py-28 bg-black">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="section-title">Tabela <span class="orange-text">Prime</span></h2>
+<p class="mt-5 text-gray-300 text-lg">
+Planos simples para o cliente escolher rápido.
+</p>
+</div>
+
+<div class="grid md:grid-cols-3 gap-7 mt-14">
+
+<div class="price-card card rounded-3xl p-8">
+<h3 class="text-2xl font-black">Essencial</h3>
+<p class="text-gray-400 mt-3">Para manter o visual em dia.</p>
+<p class="text-4xl font-black mt-6 orange-text">Corte</p>
+<ul class="mt-6 space-y-3 text-gray-300">
+<li>✓ Corte masculino</li>
+<li>✓ Acabamento</li>
+<li>✓ Finalização</li>
+</ul>
+</div>
+
+<div class="price-card card rounded-3xl p-8 border border-orange-500/50">
+<div class="inline-flex orange px-4 py-2 rounded-full text-sm font-black mb-4">Mais pedido</div>
+<h3 class="text-2xl font-black">Prime</h3>
+<p class="text-gray-400 mt-3">Cabelo e barba completos.</p>
+<p class="text-4xl font-black mt-6 orange-text">Corte + Barba</p>
+<ul class="mt-6 space-y-3 text-gray-300">
+<li>✓ Corte premium</li>
+<li>✓ Barba alinhada</li>
+<li>✓ Toalha quente</li>
+<li>✓ Finalização</li>
+</ul>
+</div>
+
+<div class="price-card card rounded-3xl p-8">
+<h3 class="text-2xl font-black">Executive</h3>
+<p class="text-gray-400 mt-3">Experiência completa.</p>
+<p class="text-4xl font-black mt-6 orange-text">Completo</p>
+<ul class="mt-6 space-y-3 text-gray-300">
+<li>✓ Corte + barba</li>
+<li>✓ Pigmentação</li>
+<li>✓ Sobrancelha</li>
+<li>✓ Finalização premium</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="sobre" class="py-20 sm:py-28 bg-[#070707]">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 items-center">
+
+<div class="card rounded-[36px] p-8">
+<h2 class="section-title">Mais que corte. <span class="orange-text">Experiência.</span></h2>
+<p class="text-gray-300 mt-6 leading-relaxed text-lg">
+A Prime Barber foi criada para atender homens que procuram qualidade, ambiente moderno e resultado profissional.
+Cada detalhe importa: da recepção ao acabamento final.
+</p>
+
+<div class="mt-8 space-y-4 text-gray-300">
+<p><i class="fa-solid fa-check text-orange-500 mr-2"></i> Atendimento com horário marcado</p>
+<p><i class="fa-solid fa-check text-orange-500 mr-2"></i> Profissionais especializados</p>
+<p><i class="fa-solid fa-check text-orange-500 mr-2"></i> Ambiente premium e confortável</p>
+<p><i class="fa-solid fa-check text-orange-500 mr-2"></i> Produtos de qualidade</p>
+</div>
+</div>
+
+<div class="grid gap-5">
+<div class="card rounded-3xl p-6">
+<h3 class="text-2xl font-black">Ambiente moderno</h3>
+<p class="text-gray-400 mt-3">Espaço preparado para conforto, estilo e atendimento profissional.</p>
+</div>
+
+<div class="card rounded-3xl p-6">
+<h3 class="text-2xl font-black">Presença masculina</h3>
+<p class="text-gray-400 mt-3">Corte e barba pensados para reforçar sua imagem.</p>
+</div>
+
+<div class="card rounded-3xl p-6">
+<h3 class="text-2xl font-black">Resultado premium</h3>
+<p class="text-gray-400 mt-3">Acabamento limpo, alinhado e pronto para qualquer ocasião.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="contato" class="py-20 sm:py-28 bg-black relative overflow-hidden">
+<div class="blur-orange top-[-200px] right-[-180px]"></div>
+
+<div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
+<h2 class="section-title">Agende seu <span class="orange-text">horário.</span></h2>
+<p class="text-gray-300 text-lg mt-6">
+Clique no botão abaixo e fale direto no WhatsApp.
+</p>
+
+<a href="https://wa.me/5598985996937?text=Olá,%20quero%20agendar%20um%20horário" class="inline-flex mt-9 orange px-10 py-5 rounded-2xl font-black text-lg glow">
+<i class="fa-brands fa-whatsapp mr-2"></i>
+Agendar pelo WhatsApp
+</a>
+</div>
+</section>
+
+<footer class="bg-[#050505] border-t border-orange-500/20 py-10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-5 text-center sm:text-left">
+<div>
+<h3 class="text-2xl font-black">Prime<span class="orange-text">Barber</span></h3>
+<p class="text-gray-500 mt-1">Modelo premium criado pela VXART.</p>
+</div>
+
+<div class="text-gray-400 text-sm">
+<p>© 2026 Prime Barber. Todos os direitos reservados.</p>
+<p class="mt-1">Design demonstrativo: VXART</p>
+</div>
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("mobileMenu").classList.toggle("active");
+}
+</script>
+
 </body>
-</html>
+  </html>
