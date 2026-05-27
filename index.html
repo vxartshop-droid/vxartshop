@@ -5,10 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>VXART | Soluções Digitais Premium</title>
-<meta name="description" content="VXART - Bio links, landing pages, mini sites, design premium e soluções digitais para negócios.">
+<meta name="description" content="VXART - Bio links, landing pages, mini sites, design e presença digital premium.">
 
 <script src="https://cdn.tailwindcss.com"></script>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -22,79 +21,92 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f6f6f6;
-color:#111;
+background:#050505;
+color:white;
 overflow-x:hidden;
 }
 
+:root{
+--orange:#ff5a00;
+--orange2:#ff7a00;
+--black:#050505;
+--dark:#0b0b0b;
+--white:#ffffff;
+}
+
 .orange{
-background:linear-gradient(135deg,#ff7a00,#ff3d00);
+background:linear-gradient(135deg,var(--orange2),var(--orange));
 }
 
 .orange-text{
-background:linear-gradient(135deg,#ff7a00,#ff3d00);
+background:linear-gradient(135deg,var(--orange2),var(--orange));
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-.blur-light{
-position:absolute;
-width:420px;
-height:420px;
-background:linear-gradient(135deg,#ff7a00,#ff3d00);
-filter:blur(120px);
-opacity:.16;
-border-radius:999px;
-z-index:-1;
+.card-dark{
+background:linear-gradient(180deg,#111,#070707);
+border:1px solid rgba(255,90,0,.18);
+box-shadow:0 25px 70px rgba(0,0,0,.45);
 }
 
-.grid-bg{
+.border-orange{
+border:1px solid rgba(255,90,0,.35);
+}
+
+.glow{
+box-shadow:0 0 35px rgba(255,90,0,.35);
+}
+
+.bg-grid{
 background-image:
-linear-gradient(rgba(255,122,0,.06) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,122,0,.06) 1px, transparent 1px);
+linear-gradient(rgba(255,90,0,.055) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,90,0,.055) 1px, transparent 1px);
 background-size:42px 42px;
 }
 
-.card{
-background:#fff;
-border:1px solid rgba(0,0,0,.06);
-box-shadow:0 12px 35px rgba(0,0,0,.08);
+.blur-orange{
+position:absolute;
+width:450px;
+height:450px;
+border-radius:999px;
+background:linear-gradient(135deg,var(--orange2),var(--orange));
+filter:blur(140px);
+opacity:.18;
+z-index:0;
 }
 
-.glass{
-background:rgba(255,255,255,.78);
-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.75);
+.logo-img{
+width:62px;
+height:62px;
+border-radius:50%;
+object-fit:cover;
+box-shadow:0 0 30px rgba(255,90,0,.35);
 }
 
-.logo-box{
-width:58px;
-height:58px;
-background:linear-gradient(135deg,#ff7a00,#ff3d00);
-border-radius:18px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:23px;
-font-weight:900;
-color:white;
-box-shadow:0 15px 35px rgba(255,90,0,.35);
+.hero-logo{
+width:340px;
+max-width:100%;
+border-radius:32px;
+filter:drop-shadow(0 0 35px rgba(255,90,0,.25));
 }
 
-.big-logo{
-width:120px;
-height:120px;
-font-size:46px;
-border-radius:30px;
+.nav-link{
+color:#d1d1d1;
+transition:.25s;
 }
 
-.service-card,.project-card,.price-card,.client-card{
+.nav-link:hover{
+color:var(--orange);
+}
+
+.service-card,.project-card,.price-card{
 transition:.35s cubic-bezier(.175,.885,.32,1.275);
 }
 
-.service-card:hover,.project-card:hover,.price-card:hover,.client-card:hover{
+.service-card:hover,.project-card:hover,.price-card:hover{
 transform:translateY(-8px) scale(1.02);
-box-shadow:0 25px 60px rgba(255,90,0,.16);
+box-shadow:0 25px 70px rgba(255,90,0,.18);
 }
 
 .float{
@@ -106,65 +118,16 @@ animation:float 4s ease-in-out infinite;
 50%{transform:translateY(-14px)}
 }
 
-.reveal{
-opacity:0;
-transform:translateY(35px);
-animation:reveal .8s ease forwards;
-}
-
-@keyframes reveal{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-.whatsapp-float{
-position:fixed;
-right:22px;
-bottom:22px;
-width:62px;
-height:62px;
-border-radius:999px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:28px;
-z-index:999;
-box-shadow:0 20px 45px rgba(255,90,0,.45);
-}
-
 .marquee{
 overflow:hidden;
 position:relative;
-}
-
-.marquee::before,
-.marquee::after{
-content:"";
-position:absolute;
-top:0;
-width:90px;
-height:100%;
-z-index:2;
-}
-
-.marquee::before{
-left:0;
-background:linear-gradient(to right,#111,transparent);
-}
-
-.marquee::after{
-right:0;
-background:linear-gradient(to left,#111,transparent);
 }
 
 .marquee-track{
 display:flex;
 gap:18px;
 width:max-content;
-animation:marquee 24s linear infinite;
+animation:marquee 28s linear infinite;
 }
 
 @keyframes marquee{
@@ -180,37 +143,49 @@ display:none;
 display:block;
 }
 
-@media(max-width:640px){
-.logo-box{
-width:48px;
-height:48px;
-font-size:20px;
-border-radius:15px;
+.whatsapp-float{
+position:fixed;
+right:20px;
+bottom:20px;
+width:62px;
+height:62px;
+border-radius:999px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:29px;
+z-index:999;
+color:#fff;
+box-shadow:0 20px 50px rgba(255,90,0,.45);
 }
 
-.big-logo{
-width:95px;
-height:95px;
-font-size:36px;
-border-radius:24px;
-}
-
-.mobile-title{
-font-size:41px;
+.section-title{
+font-size:clamp(2.2rem,5vw,4rem);
 line-height:1.05;
+font-weight:900;
 }
 
-.mobile-section-title{
-font-size:34px;
-line-height:1.1;
+.hero-title{
+font-size:clamp(2.6rem,7vw,5.8rem);
+line-height:1;
+font-weight:900;
+letter-spacing:-.05em;
+}
+
+@media(max-width:768px){
+.logo-img{
+width:50px;
+height:50px;
+}
+
+.hero-logo{
+width:260px;
 }
 
 .whatsapp-float{
 width:56px;
 height:56px;
 font-size:25px;
-right:16px;
-bottom:16px;
 }
 }
 </style>
@@ -222,43 +197,41 @@ bottom:16px;
 <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-<header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-xl border-b border-black/5 z-50">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-4">
+<header class="fixed top-0 left-0 w-full z-50 bg-black/85 backdrop-blur-xl border-b border-orange-500/20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
 
 <div class="flex items-center gap-3">
-<div class="logo-box">VX</div>
-
+<img src="logo.png" alt="VXART" class="logo-img">
 <div>
 <h1 class="text-xl sm:text-2xl font-black tracking-tight">VXART</h1>
-<p class="text-gray-500 text-xs sm:text-sm">Criar • Conectar • Evoluir</p>
+<p class="text-gray-400 text-xs">Criar • Conectar • Evoluir</p>
 </div>
 </div>
 
-<nav class="hidden md:flex items-center gap-6 text-sm font-bold text-gray-600">
-<a href="#servicos" class="hover:text-orange-600">Serviços</a>
-<a href="#clientes" class="hover:text-orange-600">Clientes</a>
-<a href="#projetos" class="hover:text-orange-600">Projetos</a>
-<a href="#planos" class="hover:text-orange-600">Planos</a>
-<a href="#faq" class="hover:text-orange-600">FAQ</a>
+<nav class="hidden lg:flex items-center gap-7 text-sm font-bold">
+<a href="#servicos" class="nav-link">Serviços</a>
+<a href="#clientes" class="nav-link">Cliente</a>
+<a href="#projetos" class="nav-link">Projetos</a>
+<a href="#planos" class="nav-link">Planos</a>
+<a href="#faq" class="nav-link">FAQ</a>
 </nav>
 
 <div class="hidden sm:block">
-<a href="https://wa.me/5598985996937?text=Olá,%20vim%20pelo%20site%20da%20VXART"
-class="orange text-white px-5 py-3 rounded-2xl font-bold shadow-lg text-sm">
+<a href="https://wa.me/5598985996937?text=Olá,%20vim%20pelo%20site%20da%20VXART" class="orange px-5 py-3 rounded-2xl font-black text-sm glow">
 WhatsApp
 </a>
 </div>
 
-<button onclick="toggleMenu()" class="md:hidden bg-black text-white w-11 h-11 rounded-2xl">
+<button onclick="toggleMenu()" class="lg:hidden w-12 h-12 rounded-2xl bg-white/10 border border-white/10">
 <i class="fa-solid fa-bars"></i>
 </button>
 
 </div>
 
-<div id="mobileMenu" class="mobile-menu md:hidden bg-white border-t border-black/5 px-4 pb-4">
-<div class="grid gap-3 pt-4 text-sm font-bold text-gray-700">
+<div id="mobileMenu" class="mobile-menu lg:hidden bg-black border-t border-orange-500/20 px-4 pb-5">
+<div class="grid gap-4 pt-5 font-bold text-gray-300">
 <a onclick="toggleMenu()" href="#servicos">Serviços</a>
-<a onclick="toggleMenu()" href="#clientes">Clientes</a>
+<a onclick="toggleMenu()" href="#clientes">Cliente</a>
 <a onclick="toggleMenu()" href="#projetos">Projetos</a>
 <a onclick="toggleMenu()" href="#planos">Planos</a>
 <a onclick="toggleMenu()" href="#faq">FAQ</a>
@@ -271,85 +244,64 @@ Chamar no WhatsApp
 
 <main>
 
-<section class="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16 grid-bg">
-<div class="blur-light top-[-160px] right-[-120px]"></div>
-<div class="blur-light bottom-[-180px] left-[-180px] opacity-10"></div>
+<section class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden bg-grid">
+<div class="blur-orange top-[-180px] right-[-160px]"></div>
+<div class="blur-orange bottom-[-220px] left-[-180px] opacity-10"></div>
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
 
-<div class="text-center lg:text-left reveal">
-<div class="inline-flex bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-xs sm:text-sm font-bold mb-6 gap-2">
+<div class="text-center lg:text-left">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 font-black text-sm mb-6">
 <i class="fa-solid fa-bolt"></i>
 Soluções Digitais Premium
 </div>
 
-<h2 class="mobile-title text-4xl sm:text-5xl lg:text-7xl font-black leading-tight tracking-tight">
-Criamos
-<span class="orange-text"> sites, links e páginas </span>
-que passam presença profissional.
+<h2 class="hero-title">
+Sites, links e design com
+<span class="orange-text">presença profissional.</span>
 </h2>
 
-<p class="mt-6 sm:mt-8 text-base sm:text-lg text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-A VXART desenvolve bio links premium, landing pages, mini sites, identidade visual e soluções modernas para negócios e profissionais.
+<p class="mt-7 text-gray-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+A VXART cria bio links, landing pages, mini sites e identidade visual com acabamento premium para negócios que precisam aparecer melhor.
 </p>
 
-<div class="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-<a href="https://wa.me/5598985996937?text=Olá,%20vim%20pelo%20site%20da%20VXART"
-class="orange text-white px-7 py-4 rounded-2xl font-black text-center shadow-xl">
-Começar Agora
+<div class="mt-9 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<a href="https://wa.me/5598985996937?text=Olá,%20quero%20um%20orçamento%20da%20VXART" class="orange px-8 py-4 rounded-2xl font-black text-center glow">
+Solicitar Orçamento
 </a>
-
-<a href="#clientes"
-class="bg-black text-white px-7 py-4 rounded-2xl font-black text-center shadow-xl">
-Ver Clientes
+<a href="#clientes" class="bg-white text-black px-8 py-4 rounded-2xl font-black text-center">
+Ver Projeto
 </a>
 </div>
 
-<div class="mt-7 flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-5 text-xs sm:text-sm text-gray-500 font-semibold">
-<span>✓ Sites modernos</span>
-<span>✓ Bio links</span>
-<span>✓ Design premium</span>
-<span>✓ Landing pages</span>
+<div class="mt-8 flex flex-wrap gap-3 justify-center lg:justify-start text-sm text-gray-400 font-semibold">
+<span>✓ Bio Links</span>
+<span>✓ Landing Pages</span>
+<span>✓ Mini Sites</span>
+<span>✓ Design</span>
 </div>
 </div>
-
-<div class="reveal">
-<div class="card glass rounded-[30px] sm:rounded-[40px] p-6 sm:p-10 max-w-md mx-auto lg:max-w-none float">
 
 <div class="flex justify-center">
-<div class="logo-box big-logo">VX</div>
+<div class="card-dark rounded-[42px] p-6 sm:p-10 float border-orange">
+<img src="logo.png" alt="VXART Logo" class="hero-logo mx-auto">
+<div class="mt-8 grid grid-cols-2 gap-4">
+<div class="bg-white/5 rounded-3xl p-5 text-center border border-white/10">
+<p class="text-3xl font-black orange-text">01</p>
+<p class="text-sm font-bold mt-1">Bio Links</p>
 </div>
-
-<h3 class="text-center text-4xl sm:text-5xl font-black mt-7 tracking-[5px] sm:tracking-[8px]">
-VX<span class="orange-text">ART</span>
-</h3>
-
-<p class="text-center text-gray-500 mt-3 tracking-[2px] sm:tracking-[4px] text-xs sm:text-sm font-bold">
-CRIAR • CONECTAR • EVOLUIR
-</p>
-
-<div class="grid grid-cols-2 gap-4 sm:gap-5 mt-8 sm:mt-10">
-
-<div class="bg-gray-100 rounded-3xl p-4 sm:p-6 text-center">
-<p class="text-2xl sm:text-3xl font-black orange-text">01</p>
-<p class="font-bold mt-2 text-sm sm:text-base">Bio Links</p>
+<div class="bg-white/5 rounded-3xl p-5 text-center border border-white/10">
+<p class="text-3xl font-black orange-text">02</p>
+<p class="text-sm font-bold mt-1">Landing Pages</p>
 </div>
-
-<div class="bg-gray-100 rounded-3xl p-4 sm:p-6 text-center">
-<p class="text-2xl sm:text-3xl font-black orange-text">02</p>
-<p class="font-bold mt-2 text-sm sm:text-base">Landing Pages</p>
+<div class="bg-white/5 rounded-3xl p-5 text-center border border-white/10">
+<p class="text-3xl font-black orange-text">03</p>
+<p class="text-sm font-bold mt-1">Mini Sites</p>
 </div>
-
-<div class="bg-gray-100 rounded-3xl p-4 sm:p-6 text-center">
-<p class="text-2xl sm:text-3xl font-black orange-text">03</p>
-<p class="font-bold mt-2 text-sm sm:text-base">Mini Sites</p>
+<div class="bg-white/5 rounded-3xl p-5 text-center border border-white/10">
+<p class="text-3xl font-black orange-text">04</p>
+<p class="text-sm font-bold mt-1">Design</p>
 </div>
-
-<div class="bg-gray-100 rounded-3xl p-4 sm:p-6 text-center">
-<p class="text-2xl sm:text-3xl font-black orange-text">04</p>
-<p class="font-bold mt-2 text-sm sm:text-base">Design</p>
-</div>
-
 </div>
 </div>
 </div>
@@ -357,163 +309,139 @@ CRIAR • CONECTAR • EVOLUIR
 </div>
 </section>
 
-<section class="py-14 bg-black text-white">
+<section class="py-12 bg-[#080808] border-y border-orange-500/20">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-
 <div>
 <h3 class="text-3xl sm:text-4xl font-black orange-text">100%</h3>
 <p class="text-gray-400 mt-2">Responsivo</p>
 </div>
-
 <div>
 <h3 class="text-3xl sm:text-4xl font-black orange-text">24h</h3>
 <p class="text-gray-400 mt-2">Atendimento</p>
 </div>
-
 <div>
 <h3 class="text-3xl sm:text-4xl font-black orange-text">4+</h3>
 <p class="text-gray-400 mt-2">Soluções</p>
 </div>
-
 <div>
 <h3 class="text-3xl sm:text-4xl font-black orange-text">VX</h3>
 <p class="text-gray-400 mt-2">Padrão Premium</p>
 </div>
-
 </div>
 </section>
 
-<section id="clientes" class="py-16 sm:py-24 bg-[#111] text-white overflow-hidden">
+<section id="clientes" class="py-20 sm:py-28 bg-black overflow-hidden">
 <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
 <div class="text-center max-w-3xl mx-auto">
-<div class="inline-flex orange text-white px-4 py-2 rounded-full text-sm font-bold mb-5">
-Clientes e projetos VXART
+<div class="inline-flex orange px-4 py-2 rounded-full text-sm font-black mb-5">
+Cliente em destaque
 </div>
-
-<h2 class="mobile-section-title text-4xl sm:text-5xl font-black">
-Marcas que já <span class="orange-text">conectamos</span>
+<h2 class="section-title">
+Projeto real <span class="orange-text">entregue pela VXART</span>
 </h2>
-
-<p class="mt-5 text-gray-300 text-base sm:text-lg">
-Projetos desenvolvidos e adquiridos com a VXART SHOP.
+<p class="mt-5 text-gray-300 text-lg">
+ISISNET — empresa de internet fibra com site e domínio profissional.
 </p>
 </div>
 
 <div class="mt-12 marquee">
 <div class="marquee-track">
 
-<div class="min-w-[280px] sm:min-w-[360px] bg-white text-black rounded-3xl p-6">
+<div class="min-w-[300px] sm:min-w-[380px] card-dark rounded-3xl p-6 border-orange">
 <div class="flex items-center gap-4">
-<div class="w-14 h-14 orange rounded-2xl flex items-center justify-center text-white text-2xl">
+<div class="w-14 h-14 orange rounded-2xl flex items-center justify-center text-2xl">
 <i class="fa-solid fa-wifi"></i>
 </div>
 <div>
-<h3 class="font-black text-2xl">ISISNET</h3>
-<p class="text-gray-500 text-sm">Internet Fibra • Site completo</p>
+<h3 class="text-2xl font-black">ISISNET</h3>
+<p class="text-gray-400 text-sm">Internet Fibra • Site Completo</p>
 </div>
 </div>
-<p class="mt-5 text-gray-600">Domínio e site oficial desenvolvido para presença digital profissional.</p>
+<p class="mt-5 text-gray-300">Domínio e site completo adquirido na VXART.</p>
 <a href="https://isisnet.site" class="inline-flex mt-5 font-black orange-text">isisnet.site</a>
 </div>
 
-<div class="min-w-[280px] sm:min-w-[360px] bg-white/10 border border-white/10 rounded-3xl p-6">
+<div class="min-w-[300px] sm:min-w-[380px] card-dark rounded-3xl p-6">
 <div class="flex items-center gap-4">
-<div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-orange-400 text-2xl">
+<div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-orange-500 text-2xl">
 <i class="fa-solid fa-link"></i>
 </div>
 <div>
-<h3 class="font-black text-2xl">Bio Link</h3>
-<p class="text-gray-400 text-sm">Páginas para divulgação</p>
+<h3 class="text-2xl font-black">Bio Links</h3>
+<p class="text-gray-400 text-sm">Páginas profissionais</p>
 </div>
 </div>
-<p class="mt-5 text-gray-300">Links profissionais para WhatsApp, redes sociais e serviços.</p>
+<p class="mt-5 text-gray-300">Links modernos para WhatsApp, redes sociais e serviços.</p>
 </div>
 
-<div class="min-w-[280px] sm:min-w-[360px] bg-white/10 border border-white/10 rounded-3xl p-6">
+<div class="min-w-[300px] sm:min-w-[380px] card-dark rounded-3xl p-6">
 <div class="flex items-center gap-4">
-<div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-orange-400 text-2xl">
+<div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-orange-500 text-2xl">
 <i class="fa-solid fa-store"></i>
 </div>
 <div>
-<h3 class="font-black text-2xl">Mini Sites</h3>
-<p class="text-gray-400 text-sm">Empresas e negócios</p>
+<h3 class="text-2xl font-black">Mini Sites</h3>
+<p class="text-gray-400 text-sm">Negócios locais</p>
 </div>
 </div>
-<p class="mt-5 text-gray-300">Sites leves, modernos e otimizados para celular.</p>
-</div>
-
-<div class="min-w-[280px] sm:min-w-[360px] bg-white/10 border border-white/10 rounded-3xl p-6">
-<div class="flex items-center gap-4">
-<div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-orange-400 text-2xl">
-<i class="fa-solid fa-rocket"></i>
-</div>
-<div>
-<h3 class="font-black text-2xl">Landing Pages</h3>
-<p class="text-gray-400 text-sm">Conversão e vendas</p>
-</div>
-</div>
-<p class="mt-5 text-gray-300">Páginas focadas em apresentação, anúncio e resultado.</p>
+<p class="mt-5 text-gray-300">Sites leves, responsivos e com visual premium.</p>
 </div>
 
-<div class="min-w-[280px] sm:min-w-[360px] bg-white text-black rounded-3xl p-6">
+<div class="min-w-[300px] sm:min-w-[380px] card-dark rounded-3xl p-6 border-orange">
 <div class="flex items-center gap-4">
-<div class="w-14 h-14 orange rounded-2xl flex items-center justify-center text-white text-2xl">
+<div class="w-14 h-14 orange rounded-2xl flex items-center justify-center text-2xl">
 <i class="fa-solid fa-wifi"></i>
 </div>
 <div>
-<h3 class="font-black text-2xl">ISISNET</h3>
-<p class="text-gray-500 text-sm">Internet Fibra • Site completo</p>
+<h3 class="text-2xl font-black">ISISNET</h3>
+<p class="text-gray-400 text-sm">Internet Fibra • Site Completo</p>
 </div>
 </div>
-<p class="mt-5 text-gray-600">Domínio e site oficial desenvolvido para presença digital profissional.</p>
+<p class="mt-5 text-gray-300">Domínio e site completo adquirido na VXART.</p>
 <a href="https://isisnet.site" class="inline-flex mt-5 font-black orange-text">isisnet.site</a>
 </div>
 
 </div>
 </div>
 
-<div class="mt-12 grid lg:grid-cols-2 gap-8 items-center">
-<div class="client-card bg-white text-black rounded-[32px] p-8">
-<div class="inline-flex bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-bold mb-5">
-Cliente em destaque
-</div>
-
+<div class="mt-14 grid lg:grid-cols-2 gap-8 items-center">
+<div class="card-dark rounded-[34px] p-8 border-orange">
 <h3 class="text-4xl font-black">ISISNET</h3>
-<p class="text-gray-600 mt-4 leading-relaxed">
-Projeto de internet fibra com domínio próprio, site completo e presença digital profissional adquirido na VXART SHOP.
+<p class="text-gray-300 mt-4 leading-relaxed">
+Projeto de internet fibra com domínio próprio, site completo e presença digital profissional.
 </p>
 
 <div class="mt-6 grid sm:grid-cols-3 gap-4">
-<div class="bg-gray-100 rounded-2xl p-4">
+<div class="bg-white/5 rounded-2xl p-4 border border-white/10">
 <p class="font-black orange-text">Site</p>
-<p class="text-sm text-gray-600">Completo</p>
+<p class="text-sm text-gray-400">Completo</p>
 </div>
-<div class="bg-gray-100 rounded-2xl p-4">
+<div class="bg-white/5 rounded-2xl p-4 border border-white/10">
 <p class="font-black orange-text">Domínio</p>
-<p class="text-sm text-gray-600">isisnet.site</p>
+<p class="text-sm text-gray-400">isisnet.site</p>
 </div>
-<div class="bg-gray-100 rounded-2xl p-4">
+<div class="bg-white/5 rounded-2xl p-4 border border-white/10">
 <p class="font-black orange-text">Nicho</p>
-<p class="text-sm text-gray-600">Internet</p>
+<p class="text-sm text-gray-400">Internet</p>
 </div>
 </div>
 
-<a href="https://isisnet.site" class="inline-flex mt-7 orange text-white px-6 py-4 rounded-2xl font-black">
+<a href="https://isisnet.site" class="inline-flex mt-7 orange px-6 py-4 rounded-2xl font-black glow">
 Ver projeto
 </a>
 </div>
 
-<div class="rounded-[32px] p-8 border border-white/10 bg-white/5">
-<h3 class="text-3xl font-black">VXART SHOP entrega presença digital.</h3>
+<div class="card-dark rounded-[34px] p-8">
+<h3 class="text-3xl font-black">Presença digital com padrão VXART.</h3>
 <p class="text-gray-300 mt-4 leading-relaxed">
-Criamos páginas para negócios locais, prestadores de serviço, provedores de internet, lojas, profissionais e criadores que precisam aparecer melhor e vender mais.
+Criamos páginas para provedores, lojas, profissionais, criadores e empresas que precisam vender mais e passar confiança.
 </p>
 
 <div class="mt-6 space-y-4">
-<p><i class="fa-solid fa-check text-orange-500 mr-2"></i> Projeto com visual premium</p>
-<p><i class="fa-solid fa-check text-orange-500 mr-2"></i> Otimizado para celular e computador</p>
-<p><i class="fa-solid fa-check text-orange-500 mr-2"></i> Contato direto pelo WhatsApp</p>
+<p><i class="fa-solid fa-check text-orange-500 mr-2"></i> Visual premium</p>
+<p><i class="fa-solid fa-check text-orange-500 mr-2"></i> Responsivo para celular e PC</p>
+<p><i class="fa-solid fa-check text-orange-500 mr-2"></i> WhatsApp direto</p>
 <p><i class="fa-solid fa-check text-orange-500 mr-2"></i> Domínio e identidade profissional</p>
 </div>
 </div>
@@ -522,98 +450,93 @@ Criamos páginas para negócios locais, prestadores de serviço, provedores de i
 </div>
 </section>
 
-<section id="servicos" class="py-16 sm:py-24 bg-white">
+<section id="servicos" class="py-20 sm:py-28 bg-[#070707]">
 <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
 <div class="text-center max-w-3xl mx-auto">
-<h2 class="mobile-section-title text-4xl sm:text-5xl font-black">
-Nossos <span class="orange-text">Serviços</span>
-</h2>
-
-<p class="mt-5 sm:mt-6 text-gray-600 text-base sm:text-lg">
-Design moderno, páginas profissionais e soluções digitais para destacar sua marca.
+<h2 class="section-title">Nossos <span class="orange-text">Serviços</span></h2>
+<p class="mt-5 text-gray-300 text-lg">
+Soluções digitais para empresas que querem parecer profissionais desde o primeiro clique.
 </p>
 </div>
 
-<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12 sm:mt-16">
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7 mt-14">
 
-<div class="service-card card rounded-3xl p-6 sm:p-8">
-<div class="w-14 h-14 sm:w-16 sm:h-16 orange rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl">
+<div class="service-card card-dark rounded-3xl p-7">
+<div class="w-16 h-16 orange rounded-2xl flex items-center justify-center text-3xl">
 <i class="fa-solid fa-link"></i>
 </div>
-<h3 class="text-xl sm:text-2xl font-black mt-5 sm:mt-6">Bio Links</h3>
-<p class="text-gray-600 mt-3 sm:mt-4 leading-relaxed">Páginas premium para Instagram, WhatsApp e divulgação profissional.</p>
+<h3 class="text-2xl font-black mt-6">Bio Links</h3>
+<p class="text-gray-400 mt-4">Página premium para Instagram, WhatsApp e divulgação profissional.</p>
 </div>
 
-<div class="service-card card rounded-3xl p-6 sm:p-8">
-<div class="w-14 h-14 sm:w-16 sm:h-16 orange rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl">
+<div class="service-card card-dark rounded-3xl p-7">
+<div class="w-16 h-16 orange rounded-2xl flex items-center justify-center text-3xl">
 <i class="fa-solid fa-rocket"></i>
 </div>
-<h3 class="text-xl sm:text-2xl font-black mt-5 sm:mt-6">Landing Pages</h3>
-<p class="text-gray-600 mt-3 sm:mt-4 leading-relaxed">Páginas para vendas, anúncios e captação de clientes.</p>
+<h3 class="text-2xl font-black mt-6">Landing Pages</h3>
+<p class="text-gray-400 mt-4">Páginas para anúncios, vendas e captação de clientes.</p>
 </div>
 
-<div class="service-card card rounded-3xl p-6 sm:p-8">
-<div class="w-14 h-14 sm:w-16 sm:h-16 orange rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl">
+<div class="service-card card-dark rounded-3xl p-7">
+<div class="w-16 h-16 orange rounded-2xl flex items-center justify-center text-3xl">
 <i class="fa-solid fa-laptop-code"></i>
 </div>
-<h3 class="text-xl sm:text-2xl font-black mt-5 sm:mt-6">Mini Sites</h3>
-<p class="text-gray-600 mt-3 sm:mt-4 leading-relaxed">Sites rápidos, modernos e profissionais para negócios.</p>
+<h3 class="text-2xl font-black mt-6">Mini Sites</h3>
+<p class="text-gray-400 mt-4">Sites modernos, rápidos e profissionais para negócios locais.</p>
 </div>
 
-<div class="service-card card rounded-3xl p-6 sm:p-8">
-<div class="w-14 h-14 sm:w-16 sm:h-16 orange rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl">
+<div class="service-card card-dark rounded-3xl p-7">
+<div class="w-16 h-16 orange rounded-2xl flex items-center justify-center text-3xl">
 <i class="fa-solid fa-pen-nib"></i>
 </div>
-<h3 class="text-xl sm:text-2xl font-black mt-5 sm:mt-6">Design</h3>
-<p class="text-gray-600 mt-3 sm:mt-4 leading-relaxed">Capas, banners, identidade visual e artes premium.</p>
+<h3 class="text-2xl font-black mt-6">Design</h3>
+<p class="text-gray-400 mt-4">Capas, banners, identidade visual e materiais digitais.</p>
 </div>
 
 </div>
 </div>
 </section>
 
-<section id="projetos" class="py-16 sm:py-24 bg-gray-100">
+<section id="projetos" class="py-20 sm:py-28 bg-black">
 <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
 <div class="text-center max-w-3xl mx-auto">
-<h2 class="mobile-section-title text-4xl sm:text-5xl font-black">
-Modelos de <span class="orange-text">Projetos</span>
-</h2>
-<p class="mt-5 text-gray-600 text-base sm:text-lg">
-Algumas soluções que podemos criar para sua marca aparecer melhor na internet.
+<h2 class="section-title">Modelos de <span class="orange-text">Projetos</span></h2>
+<p class="mt-5 text-gray-300 text-lg">
+Escolha o tipo de presença digital ideal para sua marca.
 </p>
 </div>
 
-<div class="grid md:grid-cols-3 gap-6 sm:gap-8 mt-12">
+<div class="grid md:grid-cols-3 gap-7 mt-14">
 
-<div class="project-card card rounded-3xl overflow-hidden">
-<div class="h-48 orange flex items-center justify-center text-white text-6xl">
+<div class="project-card card-dark rounded-3xl overflow-hidden">
+<div class="h-48 orange flex items-center justify-center text-6xl">
 <i class="fa-solid fa-mobile-screen-button"></i>
 </div>
 <div class="p-7">
 <h3 class="text-2xl font-black">Bio Link Premium</h3>
-<p class="text-gray-600 mt-3">Página bonita com botões, contatos, redes, serviços e chamada para WhatsApp.</p>
+<p class="text-gray-400 mt-3">Uma página bonita e direta para todos os seus links.</p>
 </div>
 </div>
 
-<div class="project-card card rounded-3xl overflow-hidden">
-<div class="h-48 bg-black flex items-center justify-center text-orange-500 text-6xl">
+<div class="project-card card-dark rounded-3xl overflow-hidden border-orange">
+<div class="h-48 bg-white/5 flex items-center justify-center text-orange-500 text-6xl">
 <i class="fa-solid fa-store"></i>
 </div>
 <div class="p-7">
 <h3 class="text-2xl font-black">Site Comercial</h3>
-<p class="text-gray-600 mt-3">Site para empresa, loja, provedor, salão, assistência, profissional autônomo e serviços.</p>
+<p class="text-gray-400 mt-3">Ideal para empresa, provedor, loja e prestador de serviço.</p>
 </div>
 </div>
 
-<div class="project-card card rounded-3xl overflow-hidden">
-<div class="h-48 orange flex items-center justify-center text-white text-6xl">
+<div class="project-card card-dark rounded-3xl overflow-hidden">
+<div class="h-48 orange flex items-center justify-center text-6xl">
 <i class="fa-solid fa-bullhorn"></i>
 </div>
 <div class="p-7">
 <h3 class="text-2xl font-black">Página de Vendas</h3>
-<p class="text-gray-600 mt-3">Landing page focada em divulgação, anúncio, captação de clientes e conversão.</p>
+<p class="text-gray-400 mt-3">Feita para anúncios, campanhas e conversão.</p>
 </div>
 </div>
 
@@ -621,50 +544,48 @@ Algumas soluções que podemos criar para sua marca aparecer melhor na internet.
 </div>
 </section>
 
-<section id="planos" class="py-16 sm:py-24 bg-white">
+<section id="planos" class="py-20 sm:py-28 bg-[#070707]">
 <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
 <div class="text-center max-w-3xl mx-auto">
-<h2 class="mobile-section-title text-4xl sm:text-5xl font-black">
-Planos <span class="orange-text">Iniciais</span>
-</h2>
-<p class="mt-5 text-gray-600 text-base sm:text-lg">
-Valores podem variar conforme o projeto, mas essa base ajuda o cliente a entender.
+<h2 class="section-title">Planos <span class="orange-text">Iniciais</span></h2>
+<p class="mt-5 text-gray-300 text-lg">
+Base inicial para você escolher o melhor começo.
 </p>
 </div>
 
-<div class="grid md:grid-cols-3 gap-6 sm:gap-8 mt-12">
+<div class="grid md:grid-cols-3 gap-7 mt-14">
 
-<div class="price-card card rounded-3xl p-8">
+<div class="price-card card-dark rounded-3xl p-8">
 <h3 class="text-2xl font-black">Start</h3>
-<p class="text-gray-600 mt-3">Para presença simples e rápida.</p>
+<p class="text-gray-400 mt-3">Presença simples e rápida.</p>
 <p class="text-4xl font-black mt-6 orange-text">Bio Link</p>
-<ul class="mt-6 space-y-3 text-gray-600">
+<ul class="mt-6 space-y-3 text-gray-300">
 <li>✓ Layout premium</li>
-<li>✓ Botão WhatsApp</li>
+<li>✓ WhatsApp direto</li>
 <li>✓ Links principais</li>
 <li>✓ Visual responsivo</li>
 </ul>
 </div>
 
-<div class="price-card card rounded-3xl p-8 border-2 border-orange-500">
-<div class="inline-flex orange text-white px-4 py-2 rounded-full text-sm font-bold mb-4">Mais pedido</div>
+<div class="price-card card-dark rounded-3xl p-8 border-orange">
+<div class="inline-flex orange px-4 py-2 rounded-full text-sm font-black mb-4">Mais pedido</div>
 <h3 class="text-2xl font-black">Pro</h3>
-<p class="text-gray-600 mt-3">Para negócio que quer vender mais.</p>
+<p class="text-gray-400 mt-3">Para vender e captar clientes.</p>
 <p class="text-4xl font-black mt-6 orange-text">Landing Page</p>
-<ul class="mt-6 space-y-3 text-gray-600">
+<ul class="mt-6 space-y-3 text-gray-300">
 <li>✓ Página de vendas</li>
 <li>✓ Seções profissionais</li>
 <li>✓ Chamada para ação</li>
-<li>✓ Otimizado para celular</li>
+<li>✓ Otimizada para celular</li>
 </ul>
 </div>
 
-<div class="price-card card rounded-3xl p-8">
+<div class="price-card card-dark rounded-3xl p-8">
 <h3 class="text-2xl font-black">Business</h3>
-<p class="text-gray-600 mt-3">Para marca mais completa.</p>
+<p class="text-gray-400 mt-3">Para marca completa.</p>
 <p class="text-4xl font-black mt-6 orange-text">Mini Site</p>
-<ul class="mt-6 space-y-3 text-gray-600">
+<ul class="mt-6 space-y-3 text-gray-300">
 <li>✓ Página institucional</li>
 <li>✓ Serviços</li>
 <li>✓ Contato</li>
@@ -676,72 +597,66 @@ Valores podem variar conforme o projeto, mas essa base ajuda o cliente a entende
 </div>
 </section>
 
-<section class="py-16 sm:py-24 bg-black text-white relative overflow-hidden">
-<div class="blur-light top-[-160px] right-[-160px] opacity-20"></div>
+<section class="py-20 sm:py-28 bg-black relative overflow-hidden">
+<div class="blur-orange top-[-200px] right-[-180px] opacity-20"></div>
 
-<div class="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
-<h2 class="mobile-section-title text-4xl sm:text-5xl lg:text-6xl font-black leading-tight">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
+<h2 class="section-title">
 Sua marca merece uma <span class="orange-text">presença forte.</span>
 </h2>
-
-<p class="max-w-3xl mx-auto text-gray-300 text-base sm:text-lg mt-6 sm:mt-8 leading-relaxed">
-A VXART cria soluções digitais modernas com visual premium para ajudar negócios, criadores e profissionais a crescerem online.
+<p class="text-gray-300 text-lg mt-6 leading-relaxed">
+Chame no WhatsApp e fale qual projeto você quer criar com a VXART.
 </p>
-
-<a href="https://wa.me/5598985996937?text=Olá,%20quero%20um%20orçamento%20da%20VXART"
-class="inline-flex mt-8 sm:mt-10 orange text-white px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-black text-base sm:text-lg shadow-2xl">
+<a href="https://wa.me/5598985996937?text=Olá,%20quero%20um%20orçamento%20da%20VXART" class="inline-flex mt-9 orange px-10 py-5 rounded-2xl font-black text-lg glow">
 Solicitar Orçamento
 </a>
 </div>
 </section>
 
-<section id="faq" class="py-16 sm:py-24 bg-white">
+<section id="faq" class="py-20 sm:py-28 bg-[#070707]">
 <div class="max-w-4xl mx-auto px-4 sm:px-6">
 
 <div class="text-center">
-<h2 class="mobile-section-title text-4xl sm:text-5xl font-black">
-Dúvidas <span class="orange-text">Frequentes</span>
-</h2>
+<h2 class="section-title">Dúvidas <span class="orange-text">Frequentes</span></h2>
 </div>
 
 <div class="mt-12 space-y-5">
-
-<div class="card rounded-3xl p-6">
-<h3 class="font-black text-xl">A VXART faz site pelo celular e computador?</h3>
-<p class="text-gray-600 mt-3">Sim. As páginas são feitas para abrir bem em celular, tablet e computador.</p>
+<div class="card-dark rounded-3xl p-6">
+<h3 class="font-black text-xl">A VXART faz site para celular e PC?</h3>
+<p class="text-gray-400 mt-3">Sim. Todos os projetos são responsivos.</p>
 </div>
 
-<div class="card rounded-3xl p-6">
-<h3 class="font-black text-xl">Posso colocar WhatsApp no site?</h3>
-<p class="text-gray-600 mt-3">Sim. O foco é justamente facilitar o cliente chamar você no WhatsApp.</p>
+<div class="card-dark rounded-3xl p-6">
+<h3 class="font-black text-xl">Posso colocar botão de WhatsApp?</h3>
+<p class="text-gray-400 mt-3">Sim. O foco é facilitar o contato do cliente.</p>
 </div>
 
-<div class="card rounded-3xl p-6">
-<h3 class="font-black text-xl">A VXART também faz artes e capas?</h3>
-<p class="text-gray-600 mt-3">Sim. Fazemos capas, banners, identidade visual e materiais para divulgação.</p>
+<div class="card-dark rounded-3xl p-6">
+<h3 class="font-black text-xl">Vocês fazem design também?</h3>
+<p class="text-gray-400 mt-3">Sim. Fazemos capas, banners, identidade visual e artes digitais.</p>
 </div>
 
-<div class="card rounded-3xl p-6">
+<div class="card-dark rounded-3xl p-6">
 <h3 class="font-black text-xl">Como peço orçamento?</h3>
-<p class="text-gray-600 mt-3">É só chamar no WhatsApp e explicar se você quer bio link, landing page, mini site ou design.</p>
+<p class="text-gray-400 mt-3">Chame no WhatsApp e explique se precisa de bio link, landing page, mini site ou design.</p>
+</div>
 </div>
 
-</div>
 </div>
 </section>
 
 </main>
 
-<footer class="bg-[#0b0b0b] text-white pt-16 pb-8 relative overflow-hidden">
-<div class="blur-light bottom-[-220px] right-[-140px] opacity-20"></div>
+<footer class="bg-black text-white pt-16 pb-8 border-t border-orange-500/20 relative overflow-hidden">
+<div class="blur-orange bottom-[-240px] right-[-180px] opacity-15"></div>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
 <div class="grid lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
 
 <div class="lg:col-span-2">
-<div class="flex items-center gap-3">
-<div class="logo-box">VX</div>
+<div class="flex items-center gap-4">
+<img src="logo.png" alt="VXART" class="logo-img">
 <div>
 <h3 class="text-3xl font-black">VXART</h3>
 <p class="text-gray-400 text-sm">Criar • Conectar • Evoluir</p>
@@ -749,33 +664,33 @@ Dúvidas <span class="orange-text">Frequentes</span>
 </div>
 
 <p class="text-gray-300 mt-6 max-w-xl leading-relaxed">
-Soluções digitais premium para negócios que querem aparecer melhor, vender mais e ter presença profissional na internet.
+Soluções digitais premium para negócios que querem aparecer melhor, vender mais e ter presença profissional.
 </p>
 </div>
 
 <div>
-<h4 class="font-black text-lg mb-5">Navegação</h4>
+<h4 class="font-black text-lg mb-5 orange-text">Navegação</h4>
 <div class="grid gap-3 text-gray-400">
 <a href="#servicos" class="hover:text-orange-500">Serviços</a>
-<a href="#clientes" class="hover:text-orange-500">Clientes</a>
+<a href="#clientes" class="hover:text-orange-500">Cliente</a>
 <a href="#projetos" class="hover:text-orange-500">Projetos</a>
 <a href="#planos" class="hover:text-orange-500">Planos</a>
 </div>
 </div>
 
 <div>
-<h4 class="font-black text-lg mb-5">Contato</h4>
+<h4 class="font-black text-lg mb-5 orange-text">Contato</h4>
 <div class="grid gap-3 text-gray-400">
 <p><i class="fa-brands fa-whatsapp text-orange-500 mr-2"></i> (98) 98599-6937</p>
 <p><i class="fa-solid fa-globe text-orange-500 mr-2"></i> vxart.shop</p>
-<p><i class="fa-solid fa-envelope text-orange-500 mr-2"></i> vxart.shop@gmail.com</p>
+<p><i class="fa-solid fa-envelope text-orange-500 mr-2"></i> vxdigitalstudio@gmail.com</p>
 </div>
 </div>
 
 </div>
 
 <div class="pt-8 flex flex-col sm:flex-row justify-between gap-4 items-center text-center sm:text-left">
-<p class="text-gray-500 text-sm">© 2026 VXART SHOP. Todos os direitos reservados.</p>
+<p class="text-gray-500 text-sm">© 2026 VXART. Todos os direitos reservados.</p>
 
 <div class="flex gap-3">
 <a href="https://wa.me/5598985996937" class="w-11 h-11 rounded-2xl bg-white/10 flex items-center justify-center hover:bg-orange-600 transition">
@@ -792,8 +707,7 @@ Soluções digitais premium para negócios que querem aparecer melhor, vender ma
 
 <script>
 function toggleMenu(){
-const menu = document.getElementById("mobileMenu");
-menu.classList.toggle("active");
+document.getElementById("mobileMenu").classList.toggle("active");
 }
 </script>
 
