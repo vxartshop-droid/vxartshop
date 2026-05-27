@@ -211,7 +211,7 @@ font-size:25px;
 <nav class="hidden lg:flex items-center gap-7 text-sm font-bold">
 <a href="#servicos" class="nav-link">Serviços</a>
 <a href="#clientes" class="nav-link">Cliente</a>
-<a href="#projetos" class="nav-link">Projetos</a>
+<a href="#projetos" class="nav-link">Modelos</a>
 <a href="#planos" class="nav-link">Planos</a>
 <a href="#faq" class="nav-link">FAQ</a>
 </nav>
@@ -232,7 +232,7 @@ WhatsApp
 <div class="grid gap-4 pt-5 font-bold text-gray-300">
 <a onclick="toggleMenu()" href="#servicos">Serviços</a>
 <a onclick="toggleMenu()" href="#clientes">Cliente</a>
-<a onclick="toggleMenu()" href="#projetos">Projetos</a>
+<a onclick="toggleMenu()" href="#projetos">Modelos</a>
 <a onclick="toggleMenu()" href="#planos">Planos</a>
 <a onclick="toggleMenu()" href="#faq">FAQ</a>
 <a onclick="toggleMenu()" href="https://wa.me/5598985996937?text=Olá,%20vim%20pelo%20site%20da%20VXART" class="orange text-white px-5 py-3 rounded-2xl text-center">
@@ -269,8 +269,8 @@ A VXART cria bio links, landing pages, mini sites e identidade visual com acabam
 <a href="https://wa.me/5598985996937?text=Olá,%20quero%20um%20orçamento%20da%20VXART" class="orange px-8 py-4 rounded-2xl font-black text-center glow">
 Solicitar Orçamento
 </a>
-<a href="#clientes" class="bg-white text-black px-8 py-4 rounded-2xl font-black text-center">
-Ver Projeto
+<a href="#projetos" class="bg-white text-black px-8 py-4 rounded-2xl font-black text-center">
+Ver Modelos
 </a>
 </div>
 
@@ -498,49 +498,127 @@ Soluções digitais para empresas que querem parecer profissionais desde o prime
 </div>
 </section>
 
-<section id="projetos" class="py-20 sm:py-28 bg-black">
-<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<section id="projetos" class="py-20 sm:py-28 bg-black relative overflow-hidden">
+<div class="blur-orange top-[-220px] left-[-200px] opacity-10"></div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
 <div class="text-center max-w-3xl mx-auto">
-<h2 class="section-title">Modelos de <span class="orange-text">Projetos</span></h2>
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 font-black text-sm mb-5">
+<i class="fa-solid fa-layer-group"></i>
+Modelos prontos VXART
+</div>
+
+<h2 class="section-title">
+Escolha um modelo e <span class="orange-text">personalize para sua marca.</span>
+</h2>
+
 <p class="mt-5 text-gray-300 text-lg">
-Escolha o tipo de presença digital ideal para sua marca.
+Demonstrações premium criadas para mostrar como seu negócio pode aparecer na internet com presença profissional.
 </p>
 </div>
 
 <div class="grid md:grid-cols-3 gap-7 mt-14">
 
-<div class="project-card card-dark rounded-3xl overflow-hidden">
-<div class="h-48 orange flex items-center justify-center text-6xl">
-<i class="fa-solid fa-mobile-screen-button"></i>
-</div>
-<div class="p-7">
-<h3 class="text-2xl font-black">Bio Link Premium</h3>
-<p class="text-gray-400 mt-3">Uma página bonita e direta para todos os seus links.</p>
-</div>
+<a href="/primebarber/" class="project-card card-dark rounded-3xl overflow-hidden group">
+<div class="h-56 bg-gradient-to-br from-black via-[#1a0d05] to-[#ff5a00] flex items-center justify-center relative overflow-hidden">
+<div class="absolute w-40 h-40 orange rounded-full blur-[90px] opacity-40"></div>
+<i class="fa-solid fa-scissors text-7xl text-white relative z-10 group-hover:scale-110 transition"></i>
 </div>
 
-<div class="project-card card-dark rounded-3xl overflow-hidden border-orange">
-<div class="h-48 bg-white/5 flex items-center justify-center text-orange-500 text-6xl">
-<i class="fa-solid fa-store"></i>
-</div>
 <div class="p-7">
-<h3 class="text-2xl font-black">Site Comercial</h3>
-<p class="text-gray-400 mt-3">Ideal para empresa, provedor, loja e prestador de serviço.</p>
-</div>
+<div class="inline-flex text-orange-400 text-xs font-black tracking-[3px] mb-3">
+BARBEARIA
 </div>
 
-<div class="project-card card-dark rounded-3xl overflow-hidden">
-<div class="h-48 orange flex items-center justify-center text-6xl">
-<i class="fa-solid fa-bullhorn"></i>
+<h3 class="text-2xl font-black">
+Prime Barber
+</h3>
+
+<p class="text-gray-400 mt-3 leading-relaxed">
+Modelo premium para barbearia, cortes, barba, agendamento e presença profissional.
+</p>
+
+<div class="mt-6 flex items-center justify-between">
+<span class="text-sm text-gray-500">Ver demonstração</span>
+<i class="fa-solid fa-arrow-right text-orange-500"></i>
 </div>
-<div class="p-7">
-<h3 class="text-2xl font-black">Página de Vendas</h3>
-<p class="text-gray-400 mt-3">Feita para anúncios, campanhas e conversão.</p>
 </div>
+</a>
+
+<a href="/fireburger/" class="project-card card-dark rounded-3xl overflow-hidden group border-orange">
+<div class="h-56 bg-gradient-to-br from-[#160600] via-black to-[#ff3d00] flex items-center justify-center relative overflow-hidden">
+<div class="absolute w-40 h-40 orange rounded-full blur-[90px] opacity-45"></div>
+<i class="fa-solid fa-burger text-7xl text-white relative z-10 group-hover:scale-110 transition"></i>
 </div>
 
+<div class="p-7">
+<div class="inline-flex text-orange-400 text-xs font-black tracking-[3px] mb-3">
+HAMBURGUERIA
 </div>
+
+<h3 class="text-2xl font-black">
+Fire Burger
+</h3>
+
+<p class="text-gray-400 mt-3 leading-relaxed">
+Modelo para hamburgueria, cardápio, combos, delivery e pedidos pelo WhatsApp.
+</p>
+
+<div class="mt-6 flex items-center justify-between">
+<span class="text-sm text-gray-500">Ver demonstração</span>
+<i class="fa-solid fa-arrow-right text-orange-500"></i>
+</div>
+</div>
+</a>
+
+<a href="/techfix/" class="project-card card-dark rounded-3xl overflow-hidden group">
+<div class="h-56 bg-gradient-to-br from-black via-[#101010] to-[#ff5a00] flex items-center justify-center relative overflow-hidden">
+<div class="absolute w-40 h-40 orange rounded-full blur-[90px] opacity-35"></div>
+<i class="fa-solid fa-screwdriver-wrench text-7xl text-white relative z-10 group-hover:scale-110 transition"></i>
+</div>
+
+<div class="p-7">
+<div class="inline-flex text-orange-400 text-xs font-black tracking-[3px] mb-3">
+ASSISTÊNCIA
+</div>
+
+<h3 class="text-2xl font-black">
+TechFix
+</h3>
+
+<p class="text-gray-400 mt-3 leading-relaxed">
+Modelo para assistência técnica, celulares, notebooks, computadores e serviços tech.
+</p>
+
+<div class="mt-6 flex items-center justify-between">
+<span class="text-sm text-gray-500">Ver demonstração</span>
+<i class="fa-solid fa-arrow-right text-orange-500"></i>
+</div>
+</div>
+</a>
+
+</div>
+
+<div class="mt-12 card-dark rounded-[34px] p-6 sm:p-8 border-orange flex flex-col lg:flex-row items-center justify-between gap-6">
+
+<div>
+<h3 class="text-2xl sm:text-3xl font-black">
+Quer um modelo para outro nicho?
+</h3>
+
+<p class="text-gray-400 mt-3 max-w-2xl">
+Criamos páginas para provedor de internet, lojas, salões, restaurantes, assistência técnica, gráficas, serviços locais e muito mais.
+</p>
+</div>
+
+<a href="https://wa.me/5598985996937?text=Olá,%20quero%20um%20modelo%20premium%20da%20VXART"
+class="orange px-7 py-4 rounded-2xl font-black glow whitespace-nowrap">
+Pedir modelo
+</a>
+
+</div>
+
 </div>
 </section>
 
@@ -673,7 +751,7 @@ Soluções digitais premium para negócios que querem aparecer melhor, vender ma
 <div class="grid gap-3 text-gray-400">
 <a href="#servicos" class="hover:text-orange-500">Serviços</a>
 <a href="#clientes" class="hover:text-orange-500">Cliente</a>
-<a href="#projetos" class="hover:text-orange-500">Projetos</a>
+<a href="#projetos" class="hover:text-orange-500">Modelos</a>
 <a href="#planos" class="hover:text-orange-500">Planos</a>
 </div>
 </div>
